@@ -15,6 +15,8 @@ services:
       - 3000:3000
     build: ./client
     command: npm run dev
+    volumes:
+      - ./client:/usr/src/client
     depends_on:
       - api
   mongo:
