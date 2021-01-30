@@ -16,7 +16,7 @@ services:
     build: ./client
     command: npm run dev
     volumes:
-      - ./client:/usr/src/client
+      - ./client:/app/client
     depends_on:
       - api
   mongo:

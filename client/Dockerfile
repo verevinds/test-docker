@@ -1,8 +1,8 @@
 FROM node:14
 
-RUN mkdir -p /usr/src/client
-WORKDIR /usr/src/client
+RUN mkdir -p /app/client
+WORKDIR /app/client
 
-COPY . /usr/src/client
+COPY . /app/client
 RUN npm install
 
