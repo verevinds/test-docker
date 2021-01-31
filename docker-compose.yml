@@ -5,7 +5,11 @@ services:
     restart: always
     ports:
     - 8081:8081
-    build: ./server
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./server:/app/server
     command: npm run dev
     depends_on:
       - mongo
@@ -13,8 +17,9 @@ services:
     restart: always
     ports:
       - 3000:3000
-    build: ./client
-    command: npm run dev
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
     volumes:
       - ./client:/app/client
     depends_on:
